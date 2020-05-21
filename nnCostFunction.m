@@ -68,6 +68,13 @@ a2 = sigmoid(z2);
 z3 = Theta2 * a2;
 a3 = sigmoid(z3);
 h = a3;
+
+% Cost function
+
+J= (1/m)*sum(sum(-Y.* log(h) - (1 -Y). * log(1-h)));
+penalty = sum(sum(Theta1(:,2:end) .* Theta1(:, 2:end))) + sum(sum(Theta2(:, 2:end)))
+%backwards prop
+
       
 
 
