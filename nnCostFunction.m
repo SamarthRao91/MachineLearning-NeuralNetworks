@@ -61,7 +61,14 @@ Theta2_grad = zeros(size(Theta2));
 %               the regularization separately and then add them to Theta1_grad
 %               and Theta2_grad from Part 2.
 %
-
+% Feedforward Progogation
+a1 =x;
+z2 = Theta1 * a1;
+a2 = sigmoid(z2);
+z3 = Theta2 * a2;
+a3 = sigmoid(z3);
+h = a3;
+      
 
 
 
