@@ -73,12 +73,16 @@ h = a3;
 
 J= (1/m)*sum(sum(-Y.* log(h) - (1 -Y). * log(1-h)));
 penalty = sum(sum(Theta1(:,2:end) .* Theta1(:, 2:end))) + sum(sum(Theta2(:, 2:end)))
+penalty = penalty .* lambda / (2*m);
+J=J+penalty;
+
 %backwards prop
+small_delta3 = a3-y;
+small_delta2 = small_delta3 * Theta2(:,2:end) .* sigmoidGradient(z2);
 
       
-
-
-
+Theta1_grad = 1/m * (a1' * small_delta2)';
+Theta2_grad = 1/m * 
 
 
 
